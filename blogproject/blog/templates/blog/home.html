@@ -1,0 +1,28 @@
+{% extends 'blog/base.html'%}{%load static%} {% block content %} {% if messages%}
+<div class="post">
+    {% for message in messages%}
+    <div class="alert-{{message.tags}}">
+        {{message}}
+    </div>
+    {%endfor%}
+</div>
+{%endif%}
+<a href="{%url 'blog-new'%}" class="create-button">Create New Blog</a> {% for post in posts %}
+<div class="post">
+    <div class="post-image">
+        <div class="image">
+            <img src="{{post.image.url}}" alt="">
+        </div>
+        <div class="post-info flex-row">
+            <img src="{{post.author.profile.image.url}}" style="height:30px;width:30px;border-radius:50%;margin-bottom:-10px;" alt="">
+            <span>{{post.author}}</span>
+            <span><i class="fas fa-calendar-alt"></i>&nbsp;&nbsp;{{post.date_posted}}</span>
+        </div>
+    </div>
+    <div class="post-title">
+        <h2>{{post.title}}</h2>
+        <p>{{post.content}}</p>
+        <button><a href="{%url 'blog-detail' post.id%}"> Read More &nbsp;</a><i class="fas fa-arrow-right"></i></button>
+    </div>
+</div>
+<hr> {%endfor%} {%endblock content%}

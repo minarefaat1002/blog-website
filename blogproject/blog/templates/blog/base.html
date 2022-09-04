@@ -1,0 +1,116 @@
+{%load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--font awesome cdn-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    <!-- custom style -->
+    <link rel="stylesheet" href="{%static 'blog/main.css'%}">
+</head>
+
+<body>
+    <!--start header section-->
+    <header>
+        <div class="container">
+            <a href="" class="logo">
+                <i class="fa-solid fa-blog"></i>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="{%url 'blog-home'%}" class="active">Home</a></li>
+                    <li><a href="{%url 'blog-about'%}">About</a></li>
+                    {%if user.is_authenticated%}
+                    <li><a href="{%url 'profile'%}">Profile</a></li>
+                    <li><a href="{%url 'logout'%}">Logout</a></li>
+                    <span>{{request.user}}</span> {%else%}
+                    <li><a href="{%url 'login'%}">Login</a></li>
+                    <li><a href="{%url 'register'%}">register</a></button> {%endif%}
+
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- end header sectoin-->
+    <!-- start landing page-->
+    <div class="landing">
+        <div class="wave"></div>
+        <div class="content">
+            <h3>Articles & News</h3>
+            <h1>Stay up to date </h1>
+            <button>Explore</button>
+        </div>
+    </div>
+
+    <!--end landing page-->
+    <!-- start blogs section-->
+    <div class="blogs">
+        <div class="container">
+            {% if messages%}
+            <div class="post">
+                {% for message in messages%}
+                <div class="alert-{{message.tags}}">
+                    {{message}}
+                </div>
+                {%endfor%}
+            </div>
+            {%endif%}
+            <div class="posts">
+                {%block content%} {%endblock content%}
+            </div>
+        </div>
+    </div>
+
+    <!--end blogs section-->
+    <!-- start footer section-->
+    <div class="footer">
+        <div class="container">
+            <a href="" class="logo">
+                <i class="fa-solid fa-blog"></i>
+            </a>
+            <p>we are social</p>
+            <div class="social-icons">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fas fa-home"></i>
+                <i class="fab fa-linkedin"></i>
+            </div>
+            <ul>
+                <li><a href="{%url 'blog-home'%}">Home</a></li>
+                <li><a href="">features</a></li>
+                <li><a href="admin/">Admin</a></li>
+                <li><a href="">FAQs</a></li>
+                <li><a href="{%url 'blog-about'%}">About</a></li>
+            </ul>
+            <p class="copyright">&copy; 2021 <span>kasper</span>All rights reserved</p>
+        </div>
+    </div>
+    <!-- end footer section-->
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 3,
+            spaceBetween: 30,
+            slidesPerGroup: 3,
+            loop: true,
+            loopFillGroupWithBlank: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    </script>
+</body>
+
+</html>

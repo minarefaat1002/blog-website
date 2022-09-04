@@ -1,0 +1,381 @@
+/*start global rules */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/*small*/
+
+@media(min-width:768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+
+/*medium*/
+
+@media(min-width:992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+
+/*large*/
+
+@media(min-width:1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+
+/* end global rules*/
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+header .logo i {
+    font-size: 30px;
+    color: #333;
+}
+
+header nav {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+header nav ul {
+    display: flex;
+}
+
+header nav ul li a {
+    padding: 20px 10px;
+    display: block;
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    transition: 0.3s ease-in-out;
+    position: relative;
+    z-index: 2;
+}
+
+header nav ul li a.active,
+header nav ul li a:hover {
+    color: #fff;
+    background-color: #104f55;
+}
+
+header .logo i {
+    font-size: 42px;
+}
+
+header nav ul span {
+    font-size: 22px;
+    font-weight: bold;
+    color: #777;
+    display: block;
+    padding: 15px 0;
+    padding-left: 20px;
+}
+
+
+/*end header section */
+
+
+/*start landing page */
+
+.landing {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(images/background.jpg);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.landing .wave {
+    background-image: url(images/wave.png);
+    position: absolute;
+    width: 100%;
+    height: 129px;
+    background-position: center center;
+    bottom: 0;
+}
+
+.landing .content {
+    color: #fff;
+}
+
+.landing h3 {
+    font-size: 28px;
+}
+
+.landing h1 {
+    margin-top: 12px;
+    font-size: 46px;
+}
+
+.landing button {
+    border: 1px solid transparent;
+    background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+    border-radius: 25px;
+    padding: 15px 30px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 14px;
+    margin: 10px;
+    display: inline-block;
+}
+
+.landing button:hover {
+    box-sizing: content-box;
+    background: transparent;
+    border: 1px solid #fff;
+    color: white;
+}
+
+
+/* end landing page*/
+
+
+/*start carousel section */
+
+.carousel {
+    position: relative;
+}
+
+.carousel .boxes {
+    padding-bottom: 40px;
+}
+
+.boxes .box {
+    width: 360px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
+    padding-bottom: 15px;
+}
+
+.boxes .box .image img {
+    width: 360px;
+    height: 240px;
+}
+
+.boxes .box h2 {
+    font-size: 22px;
+    text-align: center;
+    padding: 5px 15px;
+}
+
+.boxes .box button {
+    border: 1px solid transparent;
+    background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+    border-radius: 25px;
+    padding: 15px 30px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 14px;
+    margin: 10px;
+    display: inline-block;
+}
+
+.boxes .box span {
+    display: block;
+}
+
+.swiper-button-next {
+    right: 100px;
+}
+
+.swiper-button-prev {
+    left: 100px;
+}
+
+
+/* end carousel section */
+
+
+/*start blogs section*/
+
+.blogs {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.blogs .container {
+    display: grid;
+    grid-template-columns: 100%;
+}
+
+.create-button {
+    padding: 15px 10px;
+    background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+    border-radius: 25px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    margin-left: 15px;
+    border: none;
+}
+
+.create-button:hover {
+    background-color: #000;
+}
+
+.blogs .container .post {
+    width: 100%;
+}
+
+.blogs .container .post>.post-image,
+.post-title {
+    padding: 1rem 2rem;
+    position: relative;
+}
+
+.blogs .container .posts .post>.post-image .post-info {
+    background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+    padding: 1rem;
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 3rem;
+}
+
+.blogs .post>.post-image>div {
+    overflow: hidden;
+}
+
+.blogs .post>.post-image img {
+    width: 100%;
+    transition: all 1s ease;
+}
+
+.blogs .post>.post-image img:hover {
+    transform: scale(1.4);
+}
+
+.blogs .post>.post-image .post-info span {
+    margin: 0 .5rem;
+}
+
+.blogs .post .post-title a {
+    text-decoration: none;
+    color: #000;
+    font-size: 1.5rem;
+}
+
+.blogs .post .post-title button {
+    padding: .7rem 1.4rem;
+    background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+    border: none;
+}
+
+.blogs .post .post-title p {
+    color: #777;
+    font-size: 18px;
+    margin: 15px 0 15px 0;
+}
+
+
+/*end blogs section*/
+
+.footer {
+    padding-top: calc(var(--section-padding)/2);
+    padding-bottom: calc(var(--section-padding)/2);
+    background-image: url(images/subscribe.jpg);
+    background-size: cover;
+    position: relative;
+    color: white;
+    text-align: center;
+}
+
+.footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(0 0 0 / 70%);
+}
+
+.footer .container {
+    position: relative;
+}
+
+.footer a {
+    text-decoration: none;
+}
+
+.footer .logo i {
+    font-size: 40px;
+    display: block;
+    padding: 30px 0 0;
+    color: #fff;
+}
+
+.footer p:not(.copyright) {
+    text-transform: uppercase;
+    padding: 20px;
+    border-bottom: 1px solid white;
+    font-size: 22px;
+    width: fit-content;
+    margin: 20px auto;
+}
+
+.footer .social-icons i {
+    padding: 10px 15px;
+}
+
+.footer ul {
+    margin-top: 60px;
+    list-style: none;
+}
+
+.footer ul li {
+    display: inline-block;
+    padding-left: 15px;
+}
+
+.footer ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.footer .copyright {
+    margin-top: 15px;
+}
+
+.footer .copyright span {
+    font-weight: bold;
+    color: var(--main-color);
+}
+
+
+/* end footer */

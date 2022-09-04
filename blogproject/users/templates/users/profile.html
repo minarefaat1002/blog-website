@@ -1,0 +1,57 @@
+{%load crispy_forms_tags%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <!--font awesome cdn-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .container {
+            text-align: center;
+        }
+        
+        .container img {
+            border-radius: 50%;
+        }
+        
+        .social-icons i {
+            margin-left: 5px;
+            margin-right: 5px;
+            cursor: pointer;
+        }
+        
+        .container button a {
+            text-decoration: none;
+            color: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img src="{{user.profile.image.url}}" alt="">
+        <h1>{{user.username|title}}</h1>
+        <h4>{{user.email}}</h4>
+        <div class="social-icons">
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fas fa-home"></i>
+            <i class="fab fa-linkedin"></i>
+        </div>
+        <button><a href="{%url 'profile-update'%}">Update Profile</a></button> <br>
+        <a href="{%url 'blog-home'%}">go back to home page</a>
+    </div>
+</body>
+
+</html>
